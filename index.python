@@ -1,0 +1,44 @@
+import requests
+
+# API key and base URL (register at https://openweathermap.org to get your API key)
+API_KEY = 'your_api_key_here'
+BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
+
+# Function to get weather data
+def get_weather(city):
+    params = {
+        'q': city,
+        'appid': API_KEY,
+        'units': 'metric'  # Celsius
+    }
+    response = requests.get(BASE_URL, params=params)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Error:", response.status_code)
+        return None
+
+# Example call
+weather_data = get_weather("London")
+print(weather_data)
+import matplotlib.pyplot as plt
+
+def visualize_weather(data):
+    if not data:
+        print("No data to visualize.")
+        return
+
+    # Extract values
+    main = data['main']
+    labels = ['Temperature (°C)', 'Humidity (%)', 'Pressure (hPa)']
+    values = [main['temp'], main['humidity'], main['pressure']]
+
+    # Create bar chart
+    plt.figure(figsize=(8, 5))
+    plt.bar(labels, values, color=['skyblue', 'lightgreen', 'lightcoral'])
+    plt.title(f"Current Weather in {data['name']}")
+    plt.ylabel("Values")
+    plt.show()
+
+# Visualize the previously fetched data
+visualize_weather(weather_data)
