@@ -89,4 +89,3 @@ For any questions or feedback, feel free to reach out to:
 
 *Tejas Padaki*  
 *Company:* CODTECH IT SOLUTIONS  
-*Email:* tejaspadaki33@gmail.co
