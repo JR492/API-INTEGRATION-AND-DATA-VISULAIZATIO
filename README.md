@@ -87,5 +87,5 @@ To demonstrate how to integrate a public API, process the fetched data, and crea
 ## Contact
 For any questions or feedback, feel free to reach out to:  
 
-*Tejas Padaki*  
+*N.JASWANTH REDDY*  
 *Company:* CODTECH IT SOLUTIONS  
